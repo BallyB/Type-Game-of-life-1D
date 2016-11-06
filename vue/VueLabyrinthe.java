@@ -29,7 +29,7 @@ public class VueLabyrinthe extends JPanel implements Observer{
 		super();
 		this.m = m;
 		m.addObserver(this);
-		this.setPreferredSize(new Dimension(1500,300));
+		this.setPreferredSize(new Dimension(1000,300));
 	}
 
 	@Override

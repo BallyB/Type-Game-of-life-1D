@@ -8,8 +8,8 @@ public class AlgoGenetique {
 
 	public AlgoGenetique(Modele m) {
 		this.m = m;
-		solution = new Grille(m.r);
-		copie = new Grille(m.r);
+		solution = new Grille(m.r, m.largeur);
+		copie = new Grille(m.r,m.largeur);
 	}
 	
 	public void recopieDansCopie(Carte[] grille){
@@ -43,7 +43,7 @@ public class AlgoGenetique {
 			}
 			//System.out.println(i);
 			//String message = "";
-			m = new Modele(this.m.r.getNumero());
+			m = new Modele(this.m.r.getNumero(),this.m.largeur);
 			m.getGrille().genereGrilleAleatoire();
 			//if(m.getNBVivant(m.getGrille())>9){
 				

@@ -16,7 +16,7 @@ public class Mainclass extends JFrame{
 		super("Systemes Complexes Adaptatifs - Jeu de vie");
 	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
-	    Modele m = new Modele(30);
+	    Modele m = new Modele(30, 24);
 	   // AlgoGenetique ag = new AlgoGenetique(m);
 	  //  m.affichageLabyrinthe();
 	    

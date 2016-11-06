@@ -9,9 +9,11 @@ public class Grille {
 	private Carte[][] jeux;
 	private Carte[] jeu;
 	private Regle r;
+	public int largeur;
 	
-	public Grille(Regle r){
+	public Grille(Regle r, int largeur){
 		this.r = r;
+		this.largeur = largeur;
 		creationGrille();
 	}
 
@@ -35,9 +37,9 @@ public class Grille {
 	}
 	
 	public void creationGrille(){
-		jeu = new Carte[100];
-		jeux = new Carte[20][100];
-		for (int i = 0; i < 100; i++) {
+		jeu = new Carte[this.largeur];
+		jeux = new Carte[20][this.largeur];
+		for (int i = 0; i < this.largeur; i++) {
 				jeu[i] = new Carte(i);
 				jeu[i].setTypeMap(TypeMap.MORT);
 		}
@@ -62,15 +64,15 @@ public class Grille {
 	
 	public void genereGrilleAleatoire(){
 		int randomI, randomJ;
-		jeu = new Carte[100];
+		jeu = new Carte[this.largeur];
 		for (int i = 0; i < jeu.length; i++) {
 			
 				jeu[i] = new Carte(i);
 			
 		}
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < this.largeur; i++) {
 			//randomI = (int) (Math.round(Math.random()*(7-2+1)) + 2);
-			randomI = (int) (Math.round(Math.random()*(9-0+1)));
+			randomI = (int) (Math.round(Math.random()*((this.largeur-1)-0+1)));
 			jeu[randomI].setTypeMap(TypeMap.VIVANT);;
 		}
 	}
@@ -193,7 +195,7 @@ public class Grille {
 	public void ajouterJeuCourant() {
 		//affichertab2d(jeux);
 	//	affichertab1d(jeu);
-		Carte[][] temp = new Carte[20][100];
+		Carte[][] temp = new Carte[20][this.largeur];
 	//	System.out.println(temp[0].length);
 		for (int i = 1; i < 20; i++) {
 			for (int j = 0; j < temp[0].length; j++) {

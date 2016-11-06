@@ -9,7 +9,7 @@ public class Modele extends Observable implements Runnable{
 	protected Grille grille;
 	protected Regle r;
 	//protected int hauteur = 10;
-	protected int largeur = 100;
+	protected int largeur;
 	public enum TypeSelection {VIVANT, MORT}
 	protected TypeSelection typeSelection;
 	private Carte[] copie;
@@ -19,10 +19,10 @@ public class Modele extends Observable implements Runnable{
 	protected boolean run = false;
 	protected boolean isInitialise = false;
 	
-	public Modele(int i){
-     	
+	public Modele(int i, int largeur){
+     	this.largeur = largeur;
      	r = new Regle(i);
-     	grille = new Grille(r);
+     	grille = new Grille(r, largeur);
      	//System.out.println(getLargeur());
      	setCopie(new Carte[getLargeur()]);
 	}
