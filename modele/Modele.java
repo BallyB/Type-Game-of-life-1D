@@ -37,7 +37,7 @@ public class Modele extends Observable implements Runnable{
 
 	public void setTemps(float temps) {
 		this.temps = temps;
-		this.miseAJour();
+		//this.miseAJour();
 	}
 
 	public boolean isRun() {
@@ -221,7 +221,7 @@ public class Modele extends Observable implements Runnable{
 					getGrille().getMap(j).setTypeMap(getCopie()[j].getTypeMap());
 				}
 			getGrille().ajouterJeuCourant();
-			miseAJour();
+		//	miseAJour();
 
 	}
 	
