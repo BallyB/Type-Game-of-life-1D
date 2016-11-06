@@ -1,5 +1,7 @@
 package jeudelavie1d.modele;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 import jeudelavie1d.modele.Carte.TypeMap;
@@ -151,7 +153,7 @@ public class Modele extends Observable implements Runnable{
 				}
 				
 				
-			}else if(j == grille.largeurGrille()-1){//Cas dernière cellule
+			}else if(j == grille.largeurGrille()-1){//Cas derni?re cellule
 				if(grille.getMap(j).getTypeMap() == TypeMap.MORT){	
 					etatj = 0;
 				}else{
@@ -275,6 +277,35 @@ public class Modele extends Observable implements Runnable{
 	public void majMortVivant(){
 		getMort();
 		getVivant();
+	}
+
+	public ArrayList<Carte[]> bonnesGrilles(){
+		ArrayList<Carte []> bonnesGrilles = new ArrayList<>();
+		for (int i = 0; i < this.getLargeur(); i++) {
+			int [] initialeCondition = toBinnaiare(this.largeur);
+			this.grille.initialiser(initialeCondition);
+
+		}
+		return bonnesGrilles;
+	}
+
+	public int [] toBinnaiare (int n) {
+		int[] valeur = new int[8];
+		int decimal = n;
+		for (int i = 0; i < 8; i++) {
+			if (decimal - Math.pow(2, 7 - i) > 0) {
+				valeur[i] = 1;
+				decimal -= Math.pow(2, 7 - i);
+			} else if (decimal - Math.pow(2, 7 - i) == 0) {
+				valeur[i] = 1;
+				break;
+			}
+			//Cette condition n'est pas obligatoire, le tableau de byte est rempli de 0 ? la base.
+			else {
+				valeur[i] = 0;
+			}
+		}
+		return valeur;
 	}
 
 }

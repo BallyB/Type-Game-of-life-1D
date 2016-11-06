@@ -54,7 +54,7 @@ public class AlgoGenetique {
 				while(!m.isFin()){
 					m.jeuDeLaVie();
 					if(m.nbCoup >= borneSup){
-					//message += "******    Dépassemnt     ";
+					//message += "******    D?passemnt     ";
 						break;
 					}
 				}

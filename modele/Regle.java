@@ -35,7 +35,7 @@ public class Regle {
 	                break;
 	                 
 	            }
-	            //Cette condition n'est pas obligatoire, le tableau de byte est rempli de 0 à la base.
+	            //Cette condition n'est pas obligatoire, le tableau de byte est rempli de 0 ? la base.
 	            else {
 	                 
 	                valeur[i] = 0;
@@ -43,7 +43,8 @@ public class Regle {
 	            }
 	             
 	        }
-	         
+
+
 	       /*return valeur;*/
 	         
 	    

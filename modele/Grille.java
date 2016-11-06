@@ -61,6 +61,16 @@ public class Grille {
 		}
 		return res;
 	}
+
+	public void initialiser(int [] initialeCondition){
+		for (int i = 0; i < this.largeur; i++) {
+			if(initialeCondition[i] == 0)
+				jeux[0][i].setTypeMap(TypeMap.MORT);
+			else
+				jeux[0][i].setTypeMap(TypeMap.VIVANT);
+		}
+
+	}
 	
 	public void genereGrilleAleatoire(){
 		int randomI, randomJ;
